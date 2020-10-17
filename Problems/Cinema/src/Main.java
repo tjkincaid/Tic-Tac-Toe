@@ -20,27 +20,28 @@ class Main {
         int countInput = scanner.nextInt();
         int winningRow = 0;
         int countFreeSeats = 0;
-        for (int i = 0; i < scanned1; i++){
-            if (winningRow == 0){
-                for (int j = 0; j < scanned2; j++){
+        for (int i = 0; i < scanned1; i++) {
+            if (winningRow == 0) {
+                for (int j = 0; j < scanned2; j++) {
                     switch (twoDimArray[i][j]) {
                         case 0:
                             countFreeSeats++;
-                            if (countFreeSeats==countInput){
+                            if (countFreeSeats == countInput) {
                                 winningRow = i + 1;
                             }
                             break;
                         case 1:
-                            countFreeSeats=0;
+                            countFreeSeats = 0;
                             break;
                         default:
                             break;
+
                     }
                 }
+
             }
-            countFreeSeats=0;
+            countFreeSeats = 0;
         }
         System.out.println(winningRow);
     }
-
 }
